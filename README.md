@@ -1,9 +1,9 @@
-#PixelPerfect – Social Media Image Resizer Chrome Extension
-##Overview
+# PixelPerfect – Social Media Image Resizer Chrome Extension
+## Overview
 PixelPerfect is a Chrome extension that helps you effortlessly resize images to match the recommended dimensions for various social media platforms like Facebook, Instagram, Twitter, and LinkedIn. Whether you want to use preset sizes or input your own custom dimensions, the extension makes it easy to export images in popular formats like JPEG and PNG.
 
-##Getting Started
-###🧩 Installation
+## Getting Started
+### 🧩 Installation
   1. Download the extension files from this repository.
   
   2. Open Chrome and navigate to chrome://extensions/.
@@ -14,7 +14,7 @@ PixelPerfect is a Chrome extension that helps you effortlessly resize images to 
   
   5. The PixelPerfect icon will appear in your Chrome toolbar once loaded successfully.
 
-###📸 How to Use
+### 📸 How to Use
   1. Click the PixelPerfect icon in your Chrome toolbar to open the popup window.
   
   2. Upload an image using the "Choose Image" button.
@@ -29,12 +29,12 @@ PixelPerfect is a Chrome extension that helps you effortlessly resize images to 
 
 After processing, hit "Download" to save it to your device.
 
-###💬 Feedback & Support
+### 💬 Feedback & Support
 We’d love to hear from you! If you encounter bugs or have ideas for new features, please open an issue on the GitHub repository.
 
-###🔧 Built With
-HTML
+### 🔧 Built With
+- HTML
 
-CSS (Flexbox & CSS Grid)
+- CSS (Flexbox & CSS Grid)
 
-JavaScript (Canvas API, Chrome Extensions API)
+- JavaScript (Canvas API, Chrome Extensions API)
