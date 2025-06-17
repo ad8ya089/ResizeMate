@@ -63,7 +63,6 @@ document.getElementById('resizeButton').addEventListener('click', () => {
         return;
       }
 
-
       // Clear canvas before drawing
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
@@ -145,6 +144,9 @@ function updateResizeButtonState(preset, imagePreset) {
 }
 
 function getPresetDimensions(preset, imagePreset) {
+  preset = preset.toLowerCase();
+  imagePreset = imagePreset.toLowerCase();
+
   const dimensions = {
     facebook: {
       'coverphoto': { width: 851, height: 315 },
