@@ -80,7 +80,8 @@ document.getElementById('resizeButton').addEventListener('click', () => {
       // Draw image on canvas centered
       ctx.drawImage(img, x, y, width, height);
 
-      const downloadLink = document.getElementById('downloadLink');
+      const downloadLinkId = 'downloadLink';
+      const downloadLink = document.getElementById(downloadLinkId);
       let mimeType = `image/${outputFormat}`;
       downloadLink.href = canvas.toDataURL(mimeType);
       downloadLink.download = `resized-image.${outputFormat}`; 
