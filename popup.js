@@ -58,6 +58,12 @@ document.getElementById('resizeButton').addEventListener('click', () => {
       canvas.width = width;
       canvas.height = height;
 
+      if (isNaN(width) || isNaN(height)) {
+        alert('Invalid dimensions provided.');
+        return;
+      }
+
+
       // Clear canvas before drawing
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
