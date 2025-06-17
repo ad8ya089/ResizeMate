@@ -141,32 +141,32 @@ function updateResizeButtonState(preset, imagePreset) {
 function getPresetDimensions(preset, imagePreset) {
   const dimensions = {
     facebook: {
-      'profilephoto': { width: 170, height: 170 },
       'coverphoto': { width: 851, height: 315 },
       'landscape': { width: 1200, height: 630 },
       'portrait': { width: 630, height: 1200 },
-      'story': { width: 1080, height: 1920 },
+      'profilephoto': { width: 170, height: 170 },
       'square': { width: 1200, height: 1200 },
+      'story': { width: 1080, height: 1920 },
     },
     instagram: {
-      'profilephoto': { width: 320, height: 320 },
       'landscape': { width: 1080, height: 566 },
       'portrait': { width: 1080, height: 1350 },
-      'story': { width: 1080, height: 1920 },
+      'profilephoto': { width: 320, height: 320 },
       'square': { width: 1080, height: 1080 },
+      'story': { width: 1080, height: 1920 },
     },
     twitter: {
-      'profilephoto': { width: 400, height: 400 },
       'headerphoto': { width: 1500, height: 500 },
       'landscape': { width: 1600, height: 900 },
       'portrait': { width: 1080, height: 1350 },
+      'profilephoto': { width: 400, height: 400 },
       'square': { width: 1080, height: 1080 },
     },
     linkedin: {
-      'profilephoto': { width: 400, height: 400 },
       'coverphoto': { width: 1128, height: 191 },
       'landscape': { width: 1200, height: 627 },
       'portrait': { width: 627, height: 1200 },
+      'profilephoto': { width: 400, height: 400 },
       'square': { width: 1080, height: 1080 },
     },
   };
