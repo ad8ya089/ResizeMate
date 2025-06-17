@@ -123,7 +123,8 @@ document.getElementById('imagePreset').addEventListener('change', () => {
 function resetUploadState() {
   const uploadMessage = document.getElementById('uploadMessage');
   const downloadLink = document.getElementById('downloadLink');
-  const fileInput = document.getElementById('imageInput');
+  const $ = (id) => document.getElementById(id);
+  const fileInput = $('imageInput');
 
   uploadMessage.textContent = '';
   uploadMessage.classList.add('hidden');
