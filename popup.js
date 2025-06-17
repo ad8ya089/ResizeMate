@@ -171,8 +171,13 @@ function getPresetDimensions(preset, imagePreset) {
     },
   };
 
+  if (!dimensions[preset] || !dimensions[preset][imagePreset]) {
+    return { width: 1080, height: 1080 }; // fallback default
+  }
+
   return dimensions[preset][imagePreset];
 }
+
 
 function populateImagePresets(preset) {
   const imagePreset = document.getElementById('imagePreset');
