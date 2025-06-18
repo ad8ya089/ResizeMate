@@ -1,37 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>PixelPerfect</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>PixelPerfect</h1>
+
   <div class="form-container">
+    <!-- Image Input -->
     <div class="input-container">
       <label for="imageInput" class="custom-file-upload">Choose Image</label>
-      <input type="file" id="imageInput" accept="image/*"> 
+      <input type="file" id="imageInput" accept="image/*">
     </div>
-    <a href="/2024-social-media-image-sizes-reference.png" target="_blank" class="reference-link">Preset size reference</a>
-    
-    <select id="presetDimensions">
+
+    <!-- Reference Link -->
+    <a href="/2024-social-media-image-sizes-reference.png" target="_blank" class="reference-link">
+      Preset size reference
+    </a>
+
+    <!-- Preset Platform Selection -->
+    <select id="presetDimensions" aria-label="Platform Preset">
       <option value="facebook">Facebook</option>
       <option value="instagram">Instagram</option>
       <option value="twitter">Twitter</option>
-      <option value="linkedin">Linkedin</option>
+      <option value="linkedin">LinkedIn</option>
       <option value="custom">Custom</option>
     </select>
 
-    <select id="imagePreset">
-      <!-- Options will be dynamically populated -->
-    </select>
-    
-    <input type="number" id="customWidth" placeholder="Custom Width" >
-    <input type="number" id="customHeight" placeholder="Custom Height">
+    <!-- Image Preset Dropdown (Dynamic) -->
+    <select id="imagePreset" aria-label="Image Preset"></select>
 
-    <label for="bgFormat" class="bg-format-label">Background Fill
+    <!-- Custom Dimensions -->
+    <input type="number" id="customWidth" placeholder="Custom Width" min="1">
+    <input type="number" id="customHeight" placeholder="Custom Height" min="1">
+
+    <!-- Background Color Picker -->
+    <label for="backgroundColor" class="bg-format-label">
+      Background Fill
       <input type="color" id="backgroundColor" value="#000000">
     </label>
-    
+
+    <!-- Output Format Dropdown -->
     <label for="outputFormat" class="output-format-label">Output Format</label>
     <select id="outputFormat">
       <option value="png">.png</option>
@@ -53,14 +64,17 @@
       <option value="xbm">.xbm</option>
     </select>
 
+    <!-- Resize Button -->
     <button id="resizeButton">Resize</button>
 
-    <p id="uploadMessage" class="hidden"></p>
+    <!-- Upload Message -->
+    <p id="uploadMessage" class="hidden" aria-live="polite"></p>
   </div>
-  
-  <canvas id="imageCanvas" style="display:none;"></canvas>
-  <a id="downloadLink" style="display:none;">Download</a>
-  
+
+  <!-- Canvas + Download Link (Hidden) -->
+  <canvas id="imageCanvas" hidden></canvas>
+  <a id="downloadLink" hidden>Download</a>
+
   <script src="popup.js"></script>
 </body>
 </html>
