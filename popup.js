@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize upload message
   const uploadMessage = document.getElementById('uploadMessage');
   uploadMessage.classList.add('hidden'); // Hide upload message initially
+
+
 });
 
 document.getElementById('imageInput').addEventListener('change', (event) => {
@@ -18,11 +20,26 @@ document.getElementById('imageInput').addEventListener('change', (event) => {
     const fileName = file.name;
     uploadMessage.textContent = `Image "${fileName}" uploaded successfully!`;
     uploadMessage.classList.remove('hidden');
+
+    // ✅ Reset Resize Button
+    const resizeBtn = document.getElementById('resizeButton');
+    resizeBtn.textContent = 'Resize';
+    resizeBtn.disabled = false;
+
+    // ✅ Show preview
+    const preview = document.getElementById('imagePreview');
+    const fileReader = new FileReader();
+    fileReader.onload = function (e) {
+      preview.src = e.target.result;
+      preview.classList.remove('hidden');
+    };
+    fileReader.readAsDataURL(file);
   } else {
     uploadMessage.textContent = 'Please upload a valid image file.';
     uploadMessage.classList.remove('hidden');
   }
 });
+
 
 document.getElementById('resizeButton').addEventListener('click', () => {
   const fileInput = document.getElementById('imageInput');
@@ -92,6 +109,15 @@ document.getElementById('resizeButton').addEventListener('click', () => {
       downloadLink.download = `resized-image.${outputFormat}`; 
       downloadLink.style.display = 'block';
       downloadLink.textContent = 'Download';
+      // ✅ Show resized message
+      const uploadMessage = document.getElementById('uploadMessage');
+      uploadMessage.textContent = '✅ Image resized successfully! Click “Download” below.';
+      uploadMessage.classList.remove('hidden');
+
+      // ✅ Change button to indicate success
+      const resizeBtn = document.getElementById('resizeButton');
+      resizeBtn.textContent = 'Resized ✔';
+      resizeBtn.disabled = true;
     };
   };
   reader.readAsDataURL(file);

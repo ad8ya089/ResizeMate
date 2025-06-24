@@ -100,6 +100,14 @@ button:hover {
     margin-top: 10px;
 }
 
+#imagePreview {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
 .output-format-label {
     margin-top: 10px;
     margin-left: 15px;
