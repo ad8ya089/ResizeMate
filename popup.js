@@ -32,7 +32,7 @@ document.getElementById('imageInput').addEventListener('change', (event) => {
     fileReader.onload = function (e) {
       preview.src = e.target.result;
       preview.classList.remove('hidden');
-      
+
       // ✅ Show preview container
       document.getElementById('previewContainer').classList.remove('hidden');
     };
@@ -149,7 +149,7 @@ document.getElementById('presetDimensions').addEventListener('change', () => {
   document.getElementById('imagePreset').classList.toggle('hidden', customDimensions);
 
   // Reset uploaded image message and hide download link
-  resetUploadState();
+  resetUploadState({ keepImage: true });
 
   if (!customDimensions) {
     populateImagePresets(preset);
@@ -166,16 +166,20 @@ document.getElementById('imagePreset').addEventListener('change', () => {
   updateResizeButtonState(preset, imagePreset);
 });
 
-function resetUploadState() {
+function resetUploadState({ keepImage = false } = {}) {
   const uploadMessage = document.getElementById('uploadMessage');
   const downloadLink = document.getElementById('downloadLink');
-  const $ = (id) => document.getElementById(id);
-  const fileInput = $('imageInput');
 
   uploadMessage.textContent = '';
   uploadMessage.classList.add('hidden');
   downloadLink.style.display = 'none';
-  fileInput.value = null; // Reset file input value
+
+  if (!keepImage) {
+    document.getElementById('imageInput').value = null;
+  }
+
+  // Optional: hide resized preview
+  document.getElementById('resizedPreview').classList.add('hidden');
 }
 
 function updateResizeButtonState(preset, imagePreset) {
