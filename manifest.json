@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "PixelPerfect - Smart Image Resizer",
+  "name": "ResizeMate - Smart Image Resizer",
   "version": "1.0.0",
   "description": "Easily scale and format images to fit social media post requirements or custom dimensions.",
   "permissions": ["activeTab", "storage"],
