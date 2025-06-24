@@ -32,6 +32,9 @@ document.getElementById('imageInput').addEventListener('change', (event) => {
     fileReader.onload = function (e) {
       preview.src = e.target.result;
       preview.classList.remove('hidden');
+      
+      // ✅ Show preview container
+      document.getElementById('previewContainer').classList.remove('hidden');
     };
     fileReader.readAsDataURL(file);
 

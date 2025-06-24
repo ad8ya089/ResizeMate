@@ -81,7 +81,18 @@
   <a id="downloadLink" hidden>Download</a>
 
   <script src="popup.js"></script>
-  
+
   <img id="resizedPreview" class="hidden" alt="Resized Preview" style="margin-top: 15px; max-width: 100%; border-radius: 8px;" />
+
+  <div class="preview-comparison hidden" id="previewContainer">
+    <div class="preview-box">
+      <h3>Original</h3>
+      <img id="imagePreview" class="preview-image" alt="Original Preview" />
+    </div>
+    <div class="preview-box">
+      <h3>Resized</h3>
+      <img id="resizedPreview" class="preview-image" alt="Resized Preview" />
+    </div>
+  </div>
 </body>
 </html>
