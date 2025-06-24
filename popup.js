@@ -34,6 +34,11 @@ document.getElementById('imageInput').addEventListener('change', (event) => {
       preview.classList.remove('hidden');
     };
     fileReader.readAsDataURL(file);
+
+     // ✅ HIDE OLD PREVIEW IMAGE
+    const resizedPreview = document.getElementById('resizedPreview');
+    resizedPreview.classList.add('hidden');
+    resizedPreview.src = ''; // Clear the old image (optional)
   } else {
     uploadMessage.textContent = 'Please upload a valid image file.';
     uploadMessage.classList.remove('hidden');
@@ -109,7 +114,8 @@ document.getElementById('resizeButton').addEventListener('click', () => {
       downloadLink.download = `resized-image.${outputFormat}`; 
       downloadLink.style.display = 'block';
       downloadLink.textContent = 'Download';
-      // ✅ Show resized message
+
+      // ✅ Show resized done message
       const uploadMessage = document.getElementById('uploadMessage');
       uploadMessage.textContent = '✅ Image resized successfully! Click “Download” below.';
       uploadMessage.classList.remove('hidden');
@@ -118,6 +124,12 @@ document.getElementById('resizeButton').addEventListener('click', () => {
       const resizeBtn = document.getElementById('resizeButton');
       resizeBtn.textContent = 'Resized ✔';
       resizeBtn.disabled = true;
+
+      // ✅ Show resized image preview
+      const resizedPreview = document.getElementById('resizedPreview');
+      resizedPreview.src = canvas.toDataURL(mimeType);
+      resizedPreview.classList.remove('hidden');
+
     };
   };
   reader.readAsDataURL(file);
